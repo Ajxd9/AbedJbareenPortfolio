@@ -4,28 +4,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const projects = [
     {
-      projectName: "project1",
+      projectName: "Weather Clothes",
       image: "WeatherClothes.jpg",
     },
     {
-      projectName: "project2",
-      image: "project2.jpg",
+      projectName: "Countries",
+      image: "countries.png",
     },
     {
-      projectName: "project3",
-      image: "project3.jpg",
+      projectName: "Pokedex",
+      image: "pokedex.png",
     },
     {
-      projectName: "project4",
-      image: "project4.jpg",
+      projectName: "TicTacToe",
+      image: "TicTacToe.png",
     },
     {
-      projectName: "project5",
-      image: "project5.jpg",
+      projectName: "Connect4",
+      image: "Connect4.png",
     },
     {
-      projectName: "project6",
-      image: "project6.jpg",
+      projectName: "Memmory Game",
+      image: "MemmoryGame.png",
     },
     {
       projectName: "landing Page 1",
