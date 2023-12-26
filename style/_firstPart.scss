@@ -1,0 +1,17 @@
+.text-title {
+    font-family: 'Black Ops One', cursive;
+}
+
+.title-container {
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        font-size: 60px;
+        color: white;
+        margin-bottom: 15px;
+        font-family: 'Poppins', sans-serif;
+    }
+}

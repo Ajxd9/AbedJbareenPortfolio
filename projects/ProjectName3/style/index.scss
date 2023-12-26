@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: calc(1rem + 3vw);
+    direction: rtl;
+    overflow: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+
+    .form-container {
+        width: 43.489583333%;
+        display: flex;
+        padding: 0 10.8854166665vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+        h1 {
+            text-align: right;
+            font: normal normal 900 43px/63px Heebo;
+            letter-spacing: 0px;
+            color: #020253;
+            opacity: 1;
+            margin-bottom: 3vh;
+        }
+
+        p {
+            text-align: right;
+            font: normal normal normal 20px/29px Heebo;
+            letter-spacing: 0px;
+            color: #020253;
+            opacity: 1;
+        }
+
+        form {
+
+
+            .form-control {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 3vh;
+
+                label {
+                    text-align: right;
+                    font: normal normal bold 16px/24px Heebo;
+                    letter-spacing: 0px;
+                    color: #2C2C2C;
+                    opacity: 1;
+                }
+
+                input[type=text] {
+                    width: 418px;
+                    height: 50px;
+                    background: #E5EEFF 0% 0% no-repeat padding-box;
+                    opacity: 1;
+                    border-bottom: 4px solid #020253;
+                }
+            }
+
+            input[type=submit] {
+                width: 166px;
+                height: 50px;
+                background: #020253 0% 0% no-repeat padding-box;
+                text-align: center;
+                font: normal normal bold 22px/30px Heebo;
+                letter-spacing: 0.33px;
+                color: #FFFFFF;
+                opacity: 1;
+            }
+        }
+    }
+
+    .img-container {
+        width: 56.510416666%;
+        background: transparent url('../images/Coffee.png') 0% 0% no-repeat padding-box;
+        background-size: 100%;
+
+    }
+
+    @media screen and (max-width:1024px) {
+        flex-direction: column-reverse;
+
+
+        .form-container {
+            width: 100vw;
+            height: calc(100vh - 33.333333333vh);
+
+            h1 {
+                font: normal normal 900 28px/41px Heebo;
+            }
+
+            p {
+                font: normal normal normal 15px/22px Heebo;
+            }
+
+            form {
+                label {
+                    font: normal normal bold 10px/14px Heebo;
+                }
+
+                .form-control {
+                    input[type=text] {
+                        width: 286px;
+                        height: 34px;
+                    }
+
+
+                }
+
+                input[type=submit] {
+                    width: 286px;
+                    height: 34px;
+                    font: normal normal bold 14px/19px Heebo;
+                    letter-spacing: 0.21px;
+                }
+            }
+        }
+
+        .img-container {
+            width: 100%;
+            height: 33.333333333vh;
+            background-size: 100vw 33.333333333vh;
+
+        }
+    }
+}

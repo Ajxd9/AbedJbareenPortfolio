@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/firstDiv.css">
+    <link rel="stylesheet" href="./style/stars.css">
+    <link rel="stylesheet" href="./style/BlackholeAnimation.css">
+</head>
+
+<body>
+            <div class="stars" id="starsMain">
+            </div>
+            <div class="title-container">
+                <div class="text-title waviy animate-charcter">
+                    <span style="--i:1">A</span>
+                    <span style="--i:2">B</span>
+                    <span style="--i:3">E</span>
+                    <span style="--i:4">D</span>
+                    <span id="split"> </span>
+                    <span style="--i:5">J</span>
+                    <span style="--i:6">B</span>
+                    <span style="--i:7">A</span>
+                    <span style="--i:8">R</span>
+                    <span style="--i:9">E</span>
+                    <span style="--i:10">E</span>
+                    <span style="--i:11">N</span>
+                </div>
+                <h2>a glimpse of me</h2>
+                  <div id="blackHoleContainer"  display: none;">
+            <div id="blackHole"></div>
+            <iframe id="myIframe" src="Portfolio.html" frameborder="0"></iframe>
+        </div>   
+
+                <div class="center">
+                    <button class="btn" id="btn" onclick="showBlackHole()">
+                        <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                            <text x="50%" y="50%" font-family="Verdana" font-size="25" fill="white"
+                                dominant-baseline="middle" text-anchor="middle">Let's Start</text>
+                        </svg>
+                    </button>
+                    
+                </div>
+                
+            </div>
+      
+</body>                    
+
+        
+            
+    
+    <script src="./script/starCreator.js"></script>
+    <script src="./script/buttons.js"></script>
+    </body>
+
+</html>

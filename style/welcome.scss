@@ -1,0 +1,30 @@
+.portfolio-about{
+    display: flex;
+    justify-content: space-evenly;
+    .left{
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: left;
+font-size: 2em;
+#typing-container {
+        display: inline-block;
+        border-right: 2px solid #000;
+        padding-right: 5px;
+        white-space: nowrap;
+        
+        color: #0f83a7;
+    }
+    }
+    .right{
+        display: flex;
+    align-items: center;
+justify-content: center;
+
+img{
+    height: 100vh;
+    width: auto;
+}
+}
+
+}

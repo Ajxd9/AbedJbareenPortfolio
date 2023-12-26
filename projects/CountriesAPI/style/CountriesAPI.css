@@ -1,0 +1,102 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0e0e0e;
+    color: #fff;
+    margin: 20px;
+}
+
+#searchInput {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+.country-card {
+    border: 1px solid #3c3c3c;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px;
+    /* Set a fixed height for all cards */
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.country-card:hover {
+    transform: scale(1.05);
+    z-index: 1;
+    /* Bring the hovered card to the front */
+}
+
+.country-flag {
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    /* Show the whole flag while maintaining the aspect ratio */
+    border-radius: 8px;
+    transition: transform 0.3s, z-index 0s;
+    /* Add transition for z-index */
+}
+
+.country-card:hover .country-flag {
+    transform: scale(1.5);
+    /* Enlarge the flag on hover */
+    z-index: 2;
+    /* Ensure the hovered flag is above other cards */
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 8px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.country-card:hover .overlay {
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #2e2e2e;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #3c3c3c;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+}

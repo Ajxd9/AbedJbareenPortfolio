@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bungee+Hairline&family=Poppins:ital,wght@1,100&family=Rubik+Mono+One&family=Rubik+Vinyl&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+
+@import "setup";
+
+.portfolio-about {
+    font-family: 'Bungee Inline', sans-serif;
+    color: #00FFFF;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+}
+
+.about {
+    padding: 20px;
+    border: 2px solid #00FFFF;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 128, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    width: 50vw;
+
+
+
+    @keyframes glow {
+        0% {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+
+        50% {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1);
+        }
+
+        100% {
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+    }
+
+    /* Apply glow animation to text and description */
+    #text {
+        animation: glow 1s infinite alternate;
+    }
+
+}

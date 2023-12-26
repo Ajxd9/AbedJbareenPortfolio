@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="style/welcome.css" />
+    <link rel="stylesheet" href="style/projects.css" />
+    <link rel="stylesheet" href="style/contact.css" />
+    <link rel="stylesheet" href="style/contact.css" />
+
+    <script src="script/welcome.js" async></script>
+    <script src="script/projects.js" async></script>
+    <script src="script/contact.js" async></script>
+    <title>Abed Jbareen</title>
+  </head>
+
+  <body>
+    <div class="container-big">
+      <div class="nav-container">
+        <nav>
+          <div class="logo">
+            <div id="logo-image">
+              <a href="index.html">
+                <img src="./images/logoAJ.png" alt="logo"
+              /></a>
+            </div>
+            <div class="animate-charcter" id="logo-text">AbedJbareen</div>
+          </div>
+          <ul class="nav-links" id="nav-links">
+            <li>
+              <a rel="noopener noreferrer" href="#Main"> Main </a>
+            </li>
+            <li>
+              <a rel="noopener noreferrer" href="#About"> About </a>
+            </li>
+            <li>
+              <a rel="noopener noreferrer" href="#Services"> Services </a>
+            </li>
+            <li>
+              <a rel="noopener noreferrer" href="#Contact"> Contact </a>
+            </li>
+          </ul>
+          <div class="mobile-menu">
+            <div class="hamburger" id="hamburger">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="biggest-container portfolio-about" id="section-welcome">
+      <div class="left">
+        <p>Hello,</p>
+        <h1>I'm Abed</h1>
+        <div id="text-container">I am a</div>
+      </div>
+      <div class="right">
+        <img src="./images/myphoto.png" alt="myPhoto" />
+      </div>
+    </div>
+    <div class="biggest-container portfolio-about" id="section-about">
+      <img src="images/logoAJ.png" alt="logo" />
+      <div class="about">
+        <h1 id="text">I am Abed Jbareen</h1>
+        <p id="typing-container"></p>
+      </div>
+    </div>
+
+    <div class="biggest-container portfolio-projects" id="section-projects">
+      <div class="projects">
+        <div id="splitter-container">
+          <div id="panel1" class="active">
+            <div class="panel-text">
+              <h1 id="text-left">Advanced Projects</h1>
+            </div>
+          </div>
+          <div id="panel2">
+            <div class="panel-text">
+              <h1 id="text-right">Simple Projects</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="biggest-container portfolio-contact" id="section-contact">
+      <div class="contact-form" id="contactForm">
+        <h2 style="color: #00bcd4">Contact Us</h2>
+        <form id="form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+        <p class="success-message" id="successMessage">
+          Message sent successfully!
+        </p>
+      </div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-point active"></div>
+      <div class="progress-point"></div>
+      <div class="progress-point"></div>
+      <div class="progress-point"></div>
+    </div>
+
+    <script src="./script/about.js"></script>
+    <script src="./script/hamToggle.js"></script>
+    <script src="./script/scroll.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+
+
+#blackHoleContainer {
+display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+#blackHole {
+    width: 1vh;
+    height: 1vh;
+    border-radius: 50%;
+    background: black;
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    position: absolute;
+    border: 4px solid #333;
+    transform: translate(-50%, -50%);
+    animation: rotateBlackhole 3s linear infinite,
+        increaseSize 5s ease-in-out;
+    animation-fill-mode: forwards;
+    /* Keeps the final state after animation */
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    animation: increaseSize 5s ease-in-out;
+        
+    /* Keeps the final state after animation */
+}
+
+@keyframes rotateBlackhole {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes increaseSize {
+    0% {
+        width: 1vh;
+        height: 1vh;
+    }
+
+    100% {
+        width: 110vh;
+        height: 110vh;
+    }
+}
