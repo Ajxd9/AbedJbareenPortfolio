@@ -1,21 +1,13 @@
-.animate-charcter {
+.animate-character {
     text-transform: uppercase;
-    background-image: linear-gradient(-135deg,
-            #ffffff 0%,
-            #3c96e0 29%,
-            #c0b4b8 67%,
-            #355bd8 100%);
-    background-size: auto auto;
-    background-clip: border-box;
+    background-image: linear-gradient(-135deg, #ffffff 0%, #3c96e0 29%, #c0b4b8 67%, #355bd8 100%);
     background-size: 200% auto;
-    color: #fff;
     background-clip: text;
-    text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: textclip 2s linear infinite;
+    color: transparent;
+    font-size: 120px;
+    /* Adjusted font size for better visibility */
     display: flex;
-    font-size: 190px;
+    animation: textclip 2s linear infinite, waveColor 2s ease-in-out infinite;
 }
 
 @keyframes textclip {
@@ -24,31 +16,43 @@
     }
 }
 
+@keyframes waveColor {
+    0% {
+        color: #3c96e0;
+    }
+
+    50% {
+        color: #355bd8;
+    }
+
+    100% {
+        color: #3c96e0;
+    }
+}
+
 .waviy {
     position: relative;
+}
 
+.waviy span {
+    position: relative;
+    display: inline-block;
+    font-size: 120px;
+    text-transform: uppercase;
+    animation: flip 2s infinite;
+}
 
+.waviy #split {
+    margin-right: 15px;
+}
 
-    span {
-        position: relative;
-        display: inline-block;
-        font-size: 120px;
-        color: #fff;
-        text-transform: uppercase;
-        animation: flip 2s infinite;
-        animation-delay: calc(.2s * var(--i))
-    }
+@keyframes flip {
 
-    #split {
-        margin-right: 15px;
-    }
-
-    @keyframes flip {
-
-        0%,
-        80% {
-            transform: rotateY(360deg)
-        }
+    0%,
+    80% {
+        transform: rotateY(360deg);
+        -webkit-transform: rotateY(360deg);
+        /* Added vendor prefix */
     }
 }
 
