@@ -78,7 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     card.addEventListener("click", () => {
       // Navigate to projectPage.html with card name as a parameter
-      window.location.href = `projectPage.html?projectName=${project.projectName}`;
+      const projectNameForURL = project.projectName.replace(/\s+/g, "-");
+
+      window.location.href = `projectPage.html?projectName=${projectNameForURL}`;
     });
 
     return card;
