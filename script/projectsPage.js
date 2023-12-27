@@ -149,7 +149,7 @@ function updateProject() {
   updateTechIcons(project.techIcons, iconCarousel);
 
   // Ensure that the project image is updated
-  projectImage.src = "./images/Projects/" + project.image;
+  projectImage.src = `./images/projects/${project.image}`;
 }
 
 function updateTechIcons(techIcons, iconCarousel) {
@@ -159,7 +159,7 @@ function updateTechIcons(techIcons, iconCarousel) {
   // Create and append new icon elements
   techIcons.forEach((icon) => {
     const iconElement = document.createElement("img");
-    iconElement.src = `./Images/techIcons/${icon}`;
+    iconElement.src = `./images/techIcons/${icon}`;
     iconElement.alt = `${icon} icon`;
     iconElement.classList.add("icon", "tech-icon"); // Add 'tech-icon' class
     iconCarousel.appendChild(iconElement);
