@@ -78,9 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     card.addEventListener("click", () => {
       // Navigate to projectPage.html with card name as a parameter
-      window.location.href = `./projectPage.html?projectName=${encodeURIComponent(
-        project.projectName
-      )}`;
+      window.location.href = `./projectPage.html?projectName=${project.projectName}`;
     });
 
     return card;
