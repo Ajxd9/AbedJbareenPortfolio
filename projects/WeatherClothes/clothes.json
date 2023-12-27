@@ -78,18 +78,6 @@
     "temperature": "Cold weather"
   },
   {
-    "clothesName": "Sunglasses",
-    "uniqueID": "admin_Sunglasses",
-    "image": "./images/sunglasses.jpg",
-    "temperature": "Sunny weather"
-  },
-  {
-    "clothesName": "Pajamas",
-    "uniqueID": "admin_Pajamas",
-    "image": "./images/pajamas.jpg",
-    "temperature": "Sleepwear"
-  },
-  {
     "clothesName": "Sports Jacket",
     "uniqueID": "admin_SportsJacket",
     "image": "./images/sportsjacket.jpg",
