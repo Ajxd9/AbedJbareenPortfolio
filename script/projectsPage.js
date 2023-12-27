@@ -182,7 +182,30 @@ function updateProjectByProjectName() {
 
 // Initial update based on the URL
 updateProjectByProjectName();
+const prevProjectButton = document.getElementById("prev-project");
+const nextProjectButton = document.getElementById("next-project");
 
+prevProjectButton.addEventListener("click", () => navigateProject(-1));
+nextProjectButton.addEventListener("click", () => navigateProject(1));
+
+// Function to navigate projects
+function navigateProject(direction) {
+  // Hide info and image
+  projectInfo.classList.remove("show-info");
+  iconCarousel.classList.remove("show-carousel");
+  projectImage.classList.remove("show-image");
+
+  // Update the current project index based on the direction
+  currentProjectIndex =
+    (currentProjectIndex + direction + projects.length) % projects.length;
+
+  // Update the URL with the new projectName
+  const newProjectName = projects[currentProjectIndex].projectName;
+  history.pushState(null, null, `?projectName=${newProjectName}`);
+
+  // Update the project based on the new projectName
+  updateProjectByProjectName();
+}
 // Show project info and image with animations
 setTimeout(() => {
   projectInfo.classList.add("show-info");

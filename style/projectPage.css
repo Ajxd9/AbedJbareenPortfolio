@@ -122,3 +122,32 @@ body {
 .show-image {
     opacity: 1;
 }
+#project-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    width: 80vw;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.nav-arrow {
+    font-size: 50px;
+    color: #61dafb;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+#prev-project {
+    margin-left: 10px;
+}
+
+#next-project {
+    margin-right: 10px;
+}
+
+.nav-arrow:hover {
+    color: #4fa3d1;
+}
