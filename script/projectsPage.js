@@ -42,10 +42,10 @@ const projects = [
     techIcons: ["html.png", "js.png", "css.png"],
   },
   {
-    projectName: "Memmory Game",
-    image: "MemmoryGame.png",
-    demoLink: "./projects/MemmoryGame/index.html",
-    downloadLink: "./downloads/MemmoryGame.zip",
+    projectName: "Memory Game",
+    image: "MemoryGame.png",
+    demoLink: "./projects/MemoryGame/index.html",
+    downloadLink: "./downloads/MemoryGame.zip",
     techIcons: ["html.png", "js.png", "css.png", "api.png"],
   },
 

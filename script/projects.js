@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       projectName: "Memmory Game",
-      image: "MemmoryGame.png",
+      image: "MemoryGame.png",
     },
     {
       projectName: "landing Page 1",
