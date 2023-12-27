@@ -8,7 +8,7 @@
   {
     "clothesName": "Sweater",
     "uniqueID": "admin_Sweater",
-    "image": "./images/sweater.jpg",
+    "image": "./images/sweater.jpeg",
     "temperature": "Cold weather"
   },
   {
@@ -52,18 +52,6 @@
     "uniqueID": "admin_WinterCoat",
     "image": "./images/wintercoat.jpg",
     "temperature": "Very cold weather"
-  },
-  {
-    "clothesName": "Swimsuit",
-    "uniqueID": "admin_Swimsuit",
-    "image": "./images/swimsuit.jpg",
-    "temperature": "Swimming weather"
-  },
-  {
-    "clothesName": "Sun Hat",
-    "uniqueID": "admin_SunHat",
-    "image": "./images/sunhat.jpg",
-    "temperature": "Sunny weather"
   },
   {
     "clothesName": "Raincoat",
