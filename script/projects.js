@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const projects = [
     {
       projectName: "Weather Clothes",
-      image: "WeatherClothes.jpg",
+      image: "WeatherClothes.png",
     },
     {
       projectName: "Countries",

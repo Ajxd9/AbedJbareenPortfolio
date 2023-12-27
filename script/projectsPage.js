@@ -1,7 +1,7 @@
 const projects = [
   {
     projectName: "Weather Clothes",
-    image: "WeatherClothes.jpg",
+    image: "WeatherClothes.png",
     demoLink: "./projects/WeatherClothes/index.html",
     downloadLink: "./downloads/WeatherClothes.zip",
     techIcons: [
