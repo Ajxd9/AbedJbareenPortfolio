@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Futuristic Home Page</title>
+    <style>
+      body {
+        background-color: #121212;
+        color: #ffffff;
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+
+      h2 {
+        color: #18ffff;
+      }
+
+      input {
+        padding: 1em;
+        margin: 1em;
+        border: 1px solid #18ffff;
+        background-color: #121212;
+        color: #ffffff;
+        border-radius: 8px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      button {
+        padding: 1em;
+        margin: 1.5em;
+        border: none;
+        background-color: #18ffff;
+        color: #121212;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+        font-weight: bold;
+      }
+
+      button:hover {
+        background-color: #0d7377;
+      }
+
+      #formsContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        max-width: 60em;
+        margin: auto;
+      }
+
+      #registerForm,
+      #loginForm {
+        width: 45vw;
+        padding: 4em;
+        background-color: #121212;
+        border-radius: 2em;
+        box-shadow: 0px 0px 2em rgba(0, 0, 0, 0.5);
+        margin: 1em;
+        box-sizing: border-box;
+      }
+
+      #loggedInContent {
+        position: relative;
+        z-index: 1;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #18ffff;
+        padding: 1em;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #18ffff;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        cursor: pointer;
+        color: #121212;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border-radius: 8px;
+        top: 100%; /* Position it below the dropdown */
+      }
+
+      .dropdown-content li {
+        padding: 1em;
+        transition: background-color 0.3s;
+      }
+
+      .dropdown-content li:hover {
+        background-color: #0d7377;
+        color: #ffffff;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      #loggedInUsernameText {
+        cursor: pointer;
+      }
+
+      #navbarList {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      #navbarList li {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      #navbarList li a {
+        text-decoration: none;
+        color: #121212;
+        font-weight: bold;
+      }
+      #clothesList {
+        margin-top: 25vh;
+      }
+      .clothesCard {
+        border: 1px solid #18ffff;
+        border-radius: 8px;
+        margin: 10px;
+        padding: 10px;
+        max-width: 200px;
+        box-sizing: border-box;
+      }
+
+      .clothesImage {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+      .hidden {
+        display: none;
+      }
+
+      @media only screen and (max-width: 600px) {
+        body {
+          flex-direction: column;
+        }
+
+        #formsContainer {
+          flex-direction: column;
+          width: 90vw;
+        }
+
+        #registerForm,
+        #loginForm {
+          width: 100%;
+          margin: 1em 0;
+        }
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: #121212;
+        border-radius: 8px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        overflow: auto;
+        width: 800px;
+        height: 80vh;
+      }
+
+      .modal p {
+        margin: 0;
+      }
+
+      .clothesGrid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+
+      /* Center the modal and overlay on small screens */
+      @media only screen and (max-width: 600px) {
+        .modal {
+          width: 90%;
+          max-width: 400px;
+        }
+      }
+      .hidden {
+        display: block;
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="formsContainer">
+      <div id="registerForm">
+        <h2>Register</h2>
+        <label for="regUsername">Username:</label>
+        <br />
+        <input type="text" id="regUsername" required />
+        <br />
+        <label for="regPassword">Password:</label>
+        <br />
+        <input type="password" id="regPassword" required />
+        <br />
+        <button onclick="register()">Register</button>
+      </div>
+
+      <div id="loginForm">
+        <h2>Login</h2>
+        <label for="loginUsername">Username:</label>
+        <br />
+        <input type="text" id="loginUsername" required />
+        <br />
+        <label for="loginPassword">Password:</label>
+        <br />
+        <input type="password" id="loginPassword" required />
+        <br />
+        <button onclick="login()">Login</button>
+      </div>
+    </div>
+
+    <div id="loggedInContent" class="hidden">
+      <div id="navbar">
+        <div class="dropdown">
+          <a href="#" id="loggedInUsernameText"
+            >Welcome, <span id="loggedInUsername"></span>!</a
+          >
+          <ul id="dropdownMenu" class="dropdown-content">
+            <li onclick="showProfile()">Profile</li>
+            <li onclick="showLikedClothes()">Liked Clothes</li>
+            <li onclick="showMyClothes()">My Clothes</li>
+          </ul>
+        </div>
+        <button onclick="logout()">Logout</button>
+      </div>
+      <ul id="clothesList" class="hidden"></ul>
+    </div>
+    <!-- Modal -->
+    <div id="modal" class="modal"></div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay" onclick="closeModal()"></div>
+    <script>
+      let clothesData;
+      class User {
+        constructor(userName, password, email) {
+          this.userName = userName;
+          this.password = password;
+          this.email = email;
+          this.clothesAdded = [];
+          this.clothesLiked = [];
+        }
+        addClothes(clothes) {
+          this.clothesAdded.push(clothes);
+        }
+
+        likeClothes(clothes) {
+          this.clothesLiked.push(clothes);
+        }
+      }
+      class Clothes {
+        constructor(clothesName, userName, image, temperature) {
+          this.clothesName = clothesName;
+          this.uniqueID = userName + "_" + clothesName;
+          this.image = image;
+          this.temperature = temperature;
+          this.likedUsers = [];
+        }
+
+        static async getClothesData() {
+          try {
+            const response = await fetch("clothes.json");
+            const data = await response.json();
+
+            // Remove duplicates based on uniqueID
+            const uniqueClothesData = Array.from(
+              new Set(data.map((clothes) => clothes.uniqueID))
+            ).map((uniqueID) =>
+              data.find((clothes) => clothes.uniqueID === uniqueID)
+            );
+
+            return uniqueClothesData;
+          } catch (error) {
+            console.error("Error fetching clothes data:", error);
+            return [];
+          }
+        }
+
+        static displayClothesList(clothesList) {
+          displayClothes(clothesList, "clothesList");
+        }
+      }
+
+      // Create a default user (admin) if not exists
+      if (!localStorage.getItem("admin")) {
+        const adminUser = new User("admin", "admin", "admin@example.com");
+        localStorage.setItem("admin", JSON.stringify(adminUser));
+      }
+
+      function register() {
+        const username = document.getElementById("regUsername").value;
+        const password = document.getElementById("regPassword").value;
+
+        // Check if the username is already taken
+        if (localStorage.getItem(username)) {
+          alert("Username already taken. Please choose another.");
+          return;
+        }
+
+        // Create a new User instance
+        const newUser = new User(username, password, "");
+
+        // Save user info to localStorage
+        localStorage.setItem(username, JSON.stringify(newUser));
+
+        alert("Registration successful!");
+
+        // Clear the registration form
+        document.getElementById("regUsername").value = "";
+        document.getElementById("regPassword").value = "";
+      }
+
+      async function login(clothesData) {
+        const username = document.getElementById("loginUsername").value;
+        const password = document.getElementById("loginPassword").value;
+        const clothesDiv = document.getElementById("clothesList");
+
+        // Check if the user exists
+        const storedUserInfo = localStorage.getItem(username);
+
+        if (storedUserInfo) {
+          const userInfo = JSON.parse(storedUserInfo);
+
+          // Check if the password is correct
+          if (userInfo.password === password) {
+            // Login successful
+            localStorage.setItem("loggedInUser", username);
+
+            // Fetch and display clothes data
+            clothesData = await Clothes.getClothesData();
+            clothesDiv.appendChild(createClothesGrid(clothesData));
+            // Filter and add user's clothes to userInfo
+            userInfo.clothesAdded = clothesData.filter((clothes) =>
+              clothes.uniqueID.startsWith(username)
+            );
+            localStorage.setItem(username, JSON.stringify(userInfo));
+
+            // Remove the formsContainer and show welcome message
+            document.getElementById("formsContainer").style.display = "none";
+            document.getElementById("loggedInContent").style.display = "flex";
+            document.getElementById("loggedInUsername").innerText = username;
+
+            return;
+          }
+        }
+
+        // Login failed
+        alert("Invalid username or password. Please try again.");
+      }
+      function logout() {
+        // Clear the logged-in user, show formsContainer, and hide welcome message
+        localStorage.removeItem("loggedInUser");
+        document.getElementById("formsContainer").style.display = "flex";
+        document.getElementById("loggedInContent").style.display = "none";
+        document.getElementById("registerForm").classList.remove("hidden");
+        document.getElementById("loginForm").classList.remove("hidden");
+        document.getElementById("clothesList").classList.add("hidden");
+      }
+
+      function toggleDropdown() {
+        const dropdownMenu = document.getElementById("dropdownMenu");
+        dropdownMenu.style.display =
+          dropdownMenu.style.display === "block" ? "none" : "block";
+      }
+      function closeModal() {
+        const modal = document.getElementById("modal");
+        const overlay = document.getElementById("overlay");
+        modal.style.display = "none";
+        overlay.style.display = "none";
+      }
+
+      function showProfile() {
+        const user = getUserByUsername(localStorage.getItem("loggedInUser"));
+        const content = user
+          ? `Username: ${user.userName}\nEmail: ${user.email}`
+          : "No profile information available.";
+        openModal("Profile", content);
+      }
+
+      function showLikedClothes() {
+        const user = getUserByUsername(localStorage.getItem("loggedInUser"));
+        const likedClothesNames = user
+          ? user.clothesLiked.map((clothes) => clothes.clothesName).join(", ")
+          : "No liked clothes.";
+        openModal("Liked Clothes", likedClothesNames);
+      }
+      function createClothesGrid(clothesList) {
+        const clothesGridWrapper = document.createElement("div");
+        clothesGridWrapper.classList.add("clothesGrid");
+
+        clothesList.forEach((clothes) => {
+          const card = document.createElement("div");
+          card.classList.add("clothesCard");
+
+          const image = document.createElement("img");
+          image.classList.add("clothesImage");
+          image.src = clothes.image;
+          image.alt = clothes.clothesName;
+
+          const name = document.createElement("p");
+          name.textContent = clothes.clothesName;
+
+          const temp = document.createElement("p");
+          temp.textContent = "Temperature: " + clothes.temperature;
+
+          const likeButton = document.createElement("button");
+          likeButton.textContent = "Like";
+          likeButton.addEventListener("click", () => likeClothes(clothes));
+
+          card.appendChild(image);
+          card.appendChild(name);
+          card.appendChild(temp);
+          card.appendChild(likeButton);
+
+          clothesGridWrapper.appendChild(card);
+        });
+
+        return clothesGridWrapper;
+      }
+      function displayClothes(clothesList, containerId) {
+        const clothesContainer = document.getElementById(containerId);
+        if (!clothesContainer) {
+          console.error(`Container with id ${containerId} not found.`);
+          return;
+        }
+
+        clothesContainer.innerHTML = ""; // Clear existing content
+
+        clothesList.forEach((clothes) => {
+          const card = document.createElement("div");
+          card.classList.add("clothesCard");
+
+          const image = document.createElement("img");
+          image.classList.add("clothesImage");
+          image.src = clothes.image;
+          image.alt = clothes.clothesName;
+
+          const name = document.createElement("p");
+          name.textContent = clothes.clothesName;
+
+          const temp = document.createElement("p");
+          temp.textContent = "Temperature: " + clothes.temperature;
+
+          if (containerId === "clothesList") {
+            const likeButton = document.createElement("button");
+            likeButton.textContent = "Like";
+            likeButton.addEventListener("click", () => likeClothes(clothes));
+            card.appendChild(likeButton);
+          }
+
+          card.appendChild(image);
+          card.appendChild(name);
+          card.appendChild(temp);
+
+          clothesContainer.appendChild(card);
+        });
+      }
+
+      function showMyClothes() {
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        const user = getUserByUsername(loggedInUser);
+
+        if (user && user.clothesAdded.length > 0) {
+          // Display user's added clothes
+          const clothesGridElement = createClothesGrid(user.clothesAdded);
+          openModal("My Clothes", clothesGridElement.outerHTML);
+
+          // Add button to add new clothes
+          const addButton = document.createElement("button");
+          addButton.textContent = "Add Clothes";
+          addButton.addEventListener("click", showAddClothesForm);
+          const clothesGrid = document.getElementById("clothesGrid");
+
+          if (clothesGrid) {
+            clothesGrid.appendChild(addButton);
+          }
+        } else {
+          // Display a message if no clothes are added
+          openModal("My Clothes", "No added clothes.");
+
+          // Add button to add new clothes
+          const addButton = document.createElement("button");
+          addButton.textContent = "Add Clothes";
+          addButton.addEventListener("click", showAddClothesForm);
+          const modal = document.getElementById("modal");
+
+          if (modal) {
+            modal.appendChild(addButton);
+          }
+        }
+      }
+
+      function showAddClothesForm() {
+        // Display a form to add new clothes
+        const formContent = `
+        <label for="clothesName">Clothes Name:</label>
+        <br />
+        <input type="text" id="clothesName" required />
+        <br />
+        <label for="clothesImage">Image URL:</label>
+        <br />
+        <input type="text" id="clothesImage" required />
+        <br />
+        <label for="clothesTemperature">Temperature:</label>
+        <br />
+        <input type="text" id="clothesTemperature" required />
+        <br />
+        <button onclick="addNewClothes()">Add Clothes</button>
+      `;
+
+        // Update the modal content
+        const modal = document.getElementById("modal");
+        modal.innerHTML = formContent;
+
+        // Add a cancel button
+        const cancelButton = document.createElement("button");
+        cancelButton.textContent = "Cancel";
+        cancelButton.addEventListener("click", closeModal);
+        modal.appendChild(cancelButton);
+      }
+
+      async function addNewClothes() {
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        const user = getUserByUsername(loggedInUser);
+
+        // Retrieve values from the form
+        const clothesName = document.getElementById("clothesName").value;
+        const clothesImage = document.getElementById("clothesImage").value;
+        const clothesTemperature =
+          document.getElementById("clothesTemperature").value;
+
+        // Create a new Clothes instance
+        const newClothes = new Clothes(
+          clothesName,
+          loggedInUser,
+          clothesImage,
+          clothesTemperature
+        );
+
+        // Fetch the existing clothes data from the JSON file
+        const clothesData = await Clothes.getClothesData();
+
+        // Add the new clothes to the clothes data
+        clothesData.push(newClothes);
+
+        // Update the clothes data in local storage
+        localStorage.setItem("clothesData", JSON.stringify(clothesData));
+
+        // Add the new clothes to the user's collection
+        user.clothesAdded.push(newClothes);
+        localStorage.setItem(loggedInUser, JSON.stringify(user));
+
+        // Display the updated clothes list
+        const clothesListElement = document.getElementById("clothesList");
+        clothesListElement.innerHTML = ""; // Clear existing content
+
+        clothesListElement.appendChild(createClothesGrid(clothesData));
+        // Show the updated clothes list
+        clothesListElement.classList.remove("hidden");
+
+        // Display the updated clothes grid in the modal
+        const clothesGridElement = createClothesGrid(user.clothesAdded);
+        openModal("My Clothes", clothesGridElement.outerHTML);
+
+        // Add button to add new clothes
+        const addButton = document.createElement("button");
+        addButton.textContent = "Add Clothes";
+        addButton.addEventListener("click", showAddClothesForm);
+        document.getElementById("clothesGrid").appendChild(addButton);
+      }
+
+      function openModal(title, content) {
+        const modal = document.getElementById("modal");
+        const overlay = document.getElementById("overlay");
+
+        // Populate the modal content
+        const modalContent = `
+        <span id="closeModal" class="closeModal">&times;</span>
+        <h2>${title}</h2>
+
+        <div id="clothesGrid">${content}
+          
+        </div>
+
+      `;
+
+        modal.innerHTML = modalContent;
+
+        // Display the modal and overlay
+        modal.style.display = "block";
+        overlay.style.display = "block";
+
+        // Style the close button
+        const closeModalButton = document.getElementById("closeModal");
+        closeModalButton.style.float = "right";
+        closeModalButton.style.fontSize = "30px";
+        closeModalButton.style.fontWeight = "bold";
+        closeModalButton.style.cursor = "pointer";
+
+        // Close the modal when the close button is clicked
+        closeModalButton.onclick = function () {
+          modal.style.display = "none";
+          overlay.style.display = "none";
+        };
+
+        // Close the modal when clicking outside the modal content
+        window.onclick = function (event) {
+          if (event.target === overlay) {
+            modal.style.display = "none";
+            overlay.style.display = "none";
+          }
+        };
+      }
+
+      function getUserByUsername(username) {
+        const storedUserInfo = localStorage.getItem(username);
+        return storedUserInfo ? JSON.parse(storedUserInfo) : null;
+      }
+      window.onload = function () {
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        const user = getUserByUsername(loggedInUser);
+
+        if (user) {
+          const clothesDiv = document.getElementById("clothesList");
+
+          clothesDiv.appendChild(createClothesGrid(clothesData));
+        }
+      };
+      const loggedInUser = localStorage.getItem("loggedInUser");
+      if (loggedInUser) {
+        // User is logged in, hide the forms and show welcome message
+        document.getElementById("formsContainer").style.display = "none";
+        document.getElementById("loggedInContent").classList.remove("hidden");
+        document.getElementById("loggedInUsername").innerText = loggedInUser;
+      }
+    </script>
+  </body>
+</html>

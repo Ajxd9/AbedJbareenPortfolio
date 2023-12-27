@@ -1,0 +1,98 @@
+[
+  {
+    "clothesName": "T-shirt",
+    "uniqueID": "admin_T-shirt",
+    "image": "./images/tshirt.jpg",
+    "temperature": "Warm weather"
+  },
+  {
+    "clothesName": "Sweater",
+    "uniqueID": "admin_Sweater",
+    "image": "./images/sweater.jpg",
+    "temperature": "Cold weather"
+  },
+  {
+    "clothesName": "Shorts",
+    "uniqueID": "admin_Shorts",
+    "image": "./images/shorts.jpg",
+    "temperature": "Hot weather"
+  },
+  {
+    "clothesName": "Jeans",
+    "uniqueID": "admin_Jeans",
+    "image": "./images/jeans.jpg",
+    "temperature": "Mild weather"
+  },
+  {
+    "clothesName": "Hoodie",
+    "uniqueID": "admin_Hoodie",
+    "image": "./images/hoodie.jpg",
+    "temperature": "Cool weather"
+  },
+  {
+    "clothesName": "Tank Top",
+    "uniqueID": "admin_TankTop",
+    "image": "./images/tanktop.jpg",
+    "temperature": "Hot weather"
+  },
+  {
+    "clothesName": "Dress Shirt",
+    "uniqueID": "admin_DressShirt",
+    "image": "./images/dressshirt.jpg",
+    "temperature": "Moderate weather"
+  },
+  {
+    "clothesName": "Cargo Pants",
+    "uniqueID": "admin_CargoPants",
+    "image": "./images/cargopants.jpg",
+    "temperature": "Cool weather"
+  },
+  {
+    "clothesName": "Winter Coat",
+    "uniqueID": "admin_WinterCoat",
+    "image": "./images/wintercoat.jpg",
+    "temperature": "Very cold weather"
+  },
+  {
+    "clothesName": "Swimsuit",
+    "uniqueID": "admin_Swimsuit",
+    "image": "./images/swimsuit.jpg",
+    "temperature": "Swimming weather"
+  },
+  {
+    "clothesName": "Sun Hat",
+    "uniqueID": "admin_SunHat",
+    "image": "./images/sunhat.jpg",
+    "temperature": "Sunny weather"
+  },
+  {
+    "clothesName": "Raincoat",
+    "uniqueID": "admin_Raincoat",
+    "image": "./images/raincoat.jpg",
+    "temperature": "Rainy weather"
+  },
+  {
+    "clothesName": "Gloves",
+    "uniqueID": "admin_Gloves",
+    "image": "./images/gloves.jpg",
+    "temperature": "Cold weather"
+  },
+  {
+    "clothesName": "Sunglasses",
+    "uniqueID": "admin_Sunglasses",
+    "image": "./images/sunglasses.jpg",
+    "temperature": "Sunny weather"
+  },
+  {
+    "clothesName": "Pajamas",
+    "uniqueID": "admin_Pajamas",
+    "image": "./images/pajamas.jpg",
+    "temperature": "Sleepwear"
+  },
+  {
+    "clothesName": "Sports Jacket",
+    "uniqueID": "admin_SportsJacket",
+    "image": "./images/sportsjacket.jpg",
+    "temperature": "Athletic wear"
+  }
+]
