@@ -119,7 +119,7 @@ function getProjectNameFromUrl() {
 function findProjectByProjectName(projectName) {
   console.log("Searching for project with projectName:", projectName);
   const foundProject = projects.find(
-    (project) => project.projectName === projectName
+    (project) => project.projectName.replace(/\s+/g, "-") === projectName
   );
   console.log("Found project:", foundProject);
   return foundProject;
