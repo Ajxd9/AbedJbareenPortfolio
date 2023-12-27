@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Navigate to projectPage.html with card name as a parameter
       const projectNameForURL = project.projectName.replace(/\s+/g, "-");
 
-      window.location.href = `projectPage.html?projectName=${projectNameForURL}`;
+      window.location.href = `ProjectPage.html?projectName=${projectNameForURL}`;
     });
 
     return card;
