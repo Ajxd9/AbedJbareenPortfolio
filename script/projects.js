@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
       image: "Connect4.png",
     },
     {
-      projectName: "Memmory Game",
+      projectName: "Memory Game",
       image: "MemoryGame.png",
     },
     {

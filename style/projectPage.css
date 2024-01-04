@@ -19,8 +19,8 @@ body {
     opacity: 0;
     animation: fadeIn 1s forwards;
     max-width: 80vw;
-    /* Adjust as needed */
     width: 100%;
+    margin-top: 20vh;
     text-align: center;
 }
 
@@ -80,9 +80,7 @@ body {
     justify-content: center;
     margin-top: 20px;
     border-bottom: 1px solid #444;
-    /* Added border line */
     padding-bottom: 20px;
-    /* Added padding for better spacing */
 }
 
 .icon {
@@ -93,13 +91,9 @@ body {
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Additional styles for the tech icons */
 .tech-icon {
     max-width: 40px;
-    /* Adjust the maximum width as needed */
     max-height: 40px;
-    /* Adjust the maximum height as needed */
-    /* Add any other styles as needed */
 }
 
 .icon:hover {
